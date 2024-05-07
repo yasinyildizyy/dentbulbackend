@@ -1,0 +1,107 @@
+vich_uploader:
+    db_driver: orm
+    storage: flysystem
+    metadata:
+        type: attribute
+
+    mappings:
+        slider:
+            uri_prefix: '%uploads.slider%'
+            upload_destination: slider.storage
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+            delete_on_update:   true
+            delete_on_remove:   true
+        cure:
+            uri_prefix: '%uploads.cure%'
+            upload_destination: cure.storage
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+            delete_on_update:   true
+            delete_on_remove:   true
+        customer_comment:
+            uri_prefix: '%uploads.customer_comment%'
+            upload_destination: customer_comment.storage
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+            delete_on_update:   true
+            delete_on_remove:   true
+        page:
+            uri_prefix: '%uploads.page%'
+            upload_destination: page.storage
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+            delete_on_update:   true
+            delete_on_remove:   true
+        gallery:
+            uri_prefix: '%uploads.gallery%'
+            upload_destination: gallery.storage
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+            delete_on_update:   true
+            delete_on_remove:   true
+        doctor:
+            uri_prefix: '%uploads.doctor%'
+            upload_destination: doctor.storage
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+            delete_on_update:   true
+            delete_on_remove:   true
+        blog_post:
+            uri_prefix: '%uploads.blog_post%'
+            upload_destination: blog_post.storage
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+            delete_on_update:   true
+            delete_on_remove:   true
+        editor:
+            uri_prefix: '%uploads.editor%'
+            upload_destination: editor.storage
+            namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+            delete_on_update:   true
+            delete_on_remove:   true
+
+when@dev:
+    vich_uploader:
+        mappings:
+            slider:
+                uri_prefix: '%uploads.slider%'
+                upload_destination: slider.storage
+                namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+                delete_on_update: false
+                delete_on_remove: false
+            cure:
+                uri_prefix: '%uploads.cure%'
+                upload_destination: cure.storage
+                namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+                delete_on_update: false
+                delete_on_remove: false
+            customer_comment:
+                uri_prefix: '%uploads.customer_comment%'
+                upload_destination: customer_comment.storage
+                namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+                delete_on_update: false
+                delete_on_remove: false
+            page:
+                uri_prefix: '%uploads.page%'
+                upload_destination: page.storage
+                namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+                delete_on_update: false
+                delete_on_remove: false
+            gallery:
+                uri_prefix: '%uploads.gallery%'
+                upload_destination: gallery.storage
+                namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+                delete_on_update: false
+                delete_on_remove: false
+            doctor:
+                uri_prefix: '%uploads.doctor%'
+                upload_destination: doctor.storage
+                namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+                delete_on_update: false
+                delete_on_remove: false
+            blog_post:
+                uri_prefix: '%uploads.blog_post%'
+                upload_destination: blog_post.storage
+                namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+                delete_on_update: false
+                delete_on_remove: false
+            editor:
+                uri_prefix: '%uploads.editor%'
+                upload_destination: editor.storage
+                namer: Vich\UploaderBundle\Naming\SmartUniqueNamer
+                delete_on_update: false
+                delete_on_remove: false

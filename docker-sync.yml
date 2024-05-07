@@ -1,0 +1,8 @@
+version: '2'
+syncs:
+    ${NAME}-sync:
+        src: '.'
+        sync_userid: '1000'
+        max_attempt: 10
+        sync_strategy: 'native_osx'
+        sync_excludes: ["var/cache", "var/logs", "var/sessions", ".idea", "sdocker"]

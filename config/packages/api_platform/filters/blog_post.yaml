@@ -1,0 +1,9 @@
+services:
+    blog_post.order_filter:
+        parent: api_platform.doctrine.orm.order_filter
+        arguments: [ { writeAt: ~ } ]
+        tags: [ api_platform.filter ]
+        autowire: false
+        autoconfigure: false
+        public: false
+

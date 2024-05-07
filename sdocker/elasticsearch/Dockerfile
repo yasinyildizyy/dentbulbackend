@@ -1,0 +1,5 @@
+ARG ELASTICSEARCH_VERSION=7.15.0
+
+FROM docker.elastic.co/elasticsearch/elasticsearch:${ELASTICSEARCH_VERSION}
+
+EXPOSE 9200 9300

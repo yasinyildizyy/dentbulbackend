@@ -1,0 +1,27 @@
+{
+    "devDependencies": {
+        "@babel/preset-react": "^7.0.0",
+        "@hotwired/stimulus": "^3.0.0",
+        "@symfony/stimulus-bridge": "^3.0.0",
+        "@symfony/webpack-encore": "^1.7.0",
+        "axios": "^0.25.0",
+        "build-url": "^6.0.1",
+        "core-js": "^3.0.0",
+        "js-cookie": "^3.0.1",
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2",
+        "react-dropzone": "^11.5.3",
+        "react-sortablejs": "^6.1.0",
+        "regenerator-runtime": "^0.13.2",
+        "sortablejs": "^1.14.0",
+        "webpack-notifier": "^1.6.0"
+    },
+    "license": "UNLICENSED",
+    "private": true,
+    "scripts": {
+        "dev-server": "encore dev-server",
+        "dev": "encore dev",
+        "watch": "encore dev --watch",
+        "build": "encore production --progress"
+    }
+}
