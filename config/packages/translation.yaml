@@ -1,0 +1,5 @@
+framework:
+    default_locale: !php/const App\Constant\Locale::TR
+    translator:
+        default_path: '%kernel.project_dir%/translations'
+        fallbacks: '%support_locales%'

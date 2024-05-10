@@ -1,0 +1,49 @@
+version: "3.7"
+
+services:
+    php:
+        build:
+            context: sdocker/php
+            args:
+                SYMFONY_VERSION: ${SYMFONY_VERSION:-}
+                STABILITY: ${STABILITY:-stable}
+                DOCKER_ENV: ${DOCKER_ENV:-prod}
+        labels:
+            - traefik.enable=false
+        environment:
+            SYMFONY_VERSION:
+        volumes:
+            - ~/.ssh:/root/.ssh
+            - ~/.ssh/config:/etc/ssh/ssh_config                
+        healthcheck:
+            interval: 10s
+            timeout: 3s
+            retries: 3
+            start_period: 30s
+        networks:
+            - internal
+        restart: unless-stopped
+
+    caddy:
+        build:
+            context: sdocker/caddy
+        environment:
+            MERCURE_PUBLISHER_JWT: ${MERCURE_PUBLISHER_JWT:-myJWTKey}
+            MERCURE_SUBSCRIBER_JWT: ${MERCURE_SUBSCRIBER_JWT:-myJWTKey}
+        volumes:
+            - caddy_data:/data
+            - caddy_config:/config
+        networks:
+            - internal
+            - traefik-proxy
+        restart: unless-stopped
+
+volumes:
+    caddy_data:
+    caddy_config:
+
+networks:
+    traefik-proxy:
+        external: true
+    internal:
+        external: false

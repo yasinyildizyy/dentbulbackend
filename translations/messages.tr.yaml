@@ -1,0 +1,4 @@
+contactForm:
+    title:
+        classic: İletişim Formu (%locale%)
+        smart: Akıllı Form (%locale%)
