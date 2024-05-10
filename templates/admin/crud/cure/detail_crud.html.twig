@@ -1,9 +1,0 @@
-{% extends '@BigoenAdminTwoTheme/crud/detail.html.twig' %}
-{# @var ea \EasyCorp\Bundle\EasyAdminBundle\Context\AdminContext #}
-{# @var entity \EasyCorp\Bundle\EasyAdminBundle\Dto\EntityDto #}
-
-{% block main %}
-	{% import 'admin/macro/header_item_macro.html.twig' as macro %}
-	{{ macro.header(entity.instance, adminCureHeader(entity.instance), ea.crud.controllerFqcn) }}
-	{{ parent() }}
-{% endblock %}

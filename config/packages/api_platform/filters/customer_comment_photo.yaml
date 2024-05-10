@@ -1,8 +1,0 @@
-services:
-    customer_comment_photo.search_filter:
-        parent: api_platform.doctrine.orm.search_filter
-        arguments: [ { customerComment: exact } ]
-        tags: [ { name: api_platform.filter } ]
-        autowire: false
-        autoconfigure: false
-        public: false
