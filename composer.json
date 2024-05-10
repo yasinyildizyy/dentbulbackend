@@ -46,22 +46,22 @@
         "twig/twig": "^2.12|^3.0",
         "vich/uploader-bundle": "^2.0"
     },
-	"require-dev": {
-		"deployer/deployer": "^7.0",
-		"doctrine/doctrine-fixtures-bundle": "^3.4",
-		"fakerphp/faker": "^1.20",
-		"symfony/debug-bundle": "6.1.*",
-		"symfony/maker-bundle": "^1.48",
-		"symfony/stopwatch": "6.1.*",
-		"symfony/var-dumper": "6.1.*",
-		"symfony/web-profiler-bundle": "6.1.*"
-	},
-	"repositories": [
-		{
-			"type": "composer",
-			"url": "https://composer.bigoen.net/"
-		}
-	],
+    "require-dev": {
+        "deployer/deployer": "^7.0",
+        "doctrine/doctrine-fixtures-bundle": "^3.4",
+        "fakerphp/faker": "^1.20",
+        "symfony/debug-bundle": "6.1.*",
+        "symfony/maker-bundle": "^1.48",
+        "symfony/stopwatch": "6.1.*",
+        "symfony/var-dumper": "6.1.*",
+        "symfony/web-profiler-bundle": "6.1.*"
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://composer.bigoen.net/"
+        }
+    ],
     "config": {
         "allow-plugins": {
             "composer/package-versions-deprecated": true,
