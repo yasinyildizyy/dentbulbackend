@@ -1,8 +1,0 @@
-services:
-    gallery.search_filter:
-        parent: api_platform.doctrine.orm.search_filter
-        arguments: [ { category: exact } ]
-        tags: [ { name: api_platform.filter } ]
-        autowire: false
-        autoconfigure: false
-        public: false
