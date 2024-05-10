@@ -1,0 +1,18 @@
+version: "3.7"
+
+# Production environment override
+services:
+    php:
+        volumes:
+            - .:/srv/app
+        environment:
+            APP_ENV: prod
+
+    caddy:
+        labels:
+            - traefik.http.routers.${NAME}-caddy.rule=Host(`${HOST}`)
+            - traefik.http.routers.${NAME}-caddy.tls=true
+            - traefik.http.routers.${NAME}-caddy.tls.certresolver=lets-encrypt
+            - traefik.port=80
+        environment:
+            MERCURE_DEMO: # Disable the demo

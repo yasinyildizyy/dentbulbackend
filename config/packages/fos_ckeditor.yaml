@@ -1,0 +1,21 @@
+# Read the documentation: https://symfony.com/doc/current/bundles/FOSCKEditorBundle/index.html
+
+twig:
+    form_themes:
+        - '@FOSCKEditor/Form/ckeditor_widget.html.twig'
+
+fos_ck_editor:
+    default_config: normal
+    configs:
+        normal:
+            toolbar:
+                - ['Styles','Format','Font','FontSize']
+                - '/'
+                - ['Bold','Italic','Underline','StrikeThrough','-','Undo','Redo','-','Cut','Copy','Paste','PasteText','Find','Replace','-','Outdent','Indent','-','Print','-','Maximize']
+                - '/'
+                - ['NumberedList','BulletedList','-','JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock']
+                - ['Image','Iframe','Table','-','Link','Flash','Smiley','TextColor','BGColor','Source']
+            uiColor: "e4e7ea"
+            filebrowserUploadRoute: bigoen_admin.upload
+            entities_latin: false
+            allowedContent: true
