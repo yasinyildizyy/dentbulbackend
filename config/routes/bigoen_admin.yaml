@@ -1,6 +1,0 @@
-bigoen_admin.login_check:
-    path: /admin/login_check
-    methods: [POST]
-
-bigoen_admin.logout:
-    path: /admin/logout

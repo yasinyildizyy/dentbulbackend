@@ -1,9 +1,0 @@
-{% extends '@BigoenAdminTwoTheme/crud/detail.html.twig' %}
-
-{% block main %}
-	{% import 'admin/macro/header_item_macro.html.twig' as macro %}
-	{% set mainClass = 'App\\Entity\\Page' %}
-	{% set object = adminMainObjectFromRequest(app.request, mainClass) %}
-	{{ macro.header(object, adminPageHeader(object), ea.crudControllers.findCrudFqcnByEntityFqcn(mainClass)) }}
-	{{ parent() }}
-{% endblock %}
