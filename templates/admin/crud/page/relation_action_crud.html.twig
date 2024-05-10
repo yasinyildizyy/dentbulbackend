@@ -1,0 +1,17 @@
+{# @var ea \EasyCorp\Bundle\EasyAdminBundle\Context\AdminContext #}
+{# @var action \EasyCorp\Bundle\EasyAdminBundle\Dto\ActionDto #}
+{# @var entity \EasyCorp\Bundle\EasyAdminBundle\Dto\EntityDto #}
+{% if 'a' == action.htmlElement %}
+	{% set mainId = app.request.get('mainId') ? '&mainId=' ~ app.request.get('mainId') : '' %}
+	<a class="{{ isIncludedInDropdown|default(false) ? 'dropdown-item ' : 'btn btn-sm btn-outline-secondary mr-2 ' }}{{ action.name == 'delete' ? action.cssClass|replace({'pr-0': ''}) : action.cssClass }}"
+	   href="{{ action.linkUrl ~ mainId }}"
+	{% for name, value in action.htmlAttributes %}{{ name }}="{{ value|e('html_attr') }}" {% endfor %}>
+	{%- if action.icon %}<span class="icon {{ action.name == 'delete' ? action.icon|replace({'trash-o': 'trash'}) : action.icon }}"></span> {% endif -%}
+	{%- if action.label is not empty -%}{{ action.label|trans ~ ' ' }}{%- endif -%}
+	</a>
+{% elseif 'button' == action.htmlElement %}
+	<button class="{{ action.cssClass }}" {% for name, value in action.htmlAttributes %}{{ name }}="{{ value|e('html_attr') }}" {% endfor %}>
+	{%- if action.icon %}<span class="icon {{ action.name == 'saveAndContinue' ? action.icon|replace({'far' : 'fa'}) : action.icon }}"></span> {% endif -%}
+	{%- if action.label is not empty -%}{{ action.label|trans }}{%- endif -%}
+	</button>
+{% endif %}

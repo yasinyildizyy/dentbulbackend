@@ -1,0 +1,36 @@
+{% trans_default_domain 'general' %}
+{# @var ea \EasyCorp\Bundle\EasyAdminBundle\Context\AdminContext #}
+{# @var item \App\Model\Admin\HeaderItem #}
+
+{% macro header(object, headers, mainControllerFqcn) %}
+	{% if object is not null %}
+		<div class="card card-custom gutter-b">
+			<div class="card-body">
+				<ul class="nav nav-pills">
+					{% for item in headers %}
+						{% if ea.crud is not null %}
+							{% if ea.crud.controllerFqcn == mainControllerFqcn %}
+								{% set isActive =
+									ea.crud.controllerFqcn == item.controller
+									and ea.crud.currentAction == item.action
+								%}
+							{% else %}
+								{% set isActive = ea.crud.controllerFqcn == item.controller %}
+							{% endif %}
+						{% else %}
+							{% set isActive = false %}
+						{% endif %}
+						<li class="nav-item">
+							<a class="nav-link{{ isActive ? ' active' }}" href="{{ item.url }}">
+						<span class="nav-icon">
+							<i class="fa fa-{{ item.icon }}"></i>
+						</span>
+								<span class="nav-text">{{ item.name }}</span>
+							</a>
+						</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+	{% endif %}
+{% endmacro %}

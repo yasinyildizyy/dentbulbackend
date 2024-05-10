@@ -1,0 +1,8 @@
+services:
+    is_show_homepage.boolean_filter:
+        parent: api_platform.doctrine.orm.boolean_filter
+        arguments: [ { isShowHomepage: ~ } ]
+        tags: [ api_platform.filter ]
+        autowire: false
+        autoconfigure: false
+        public: false

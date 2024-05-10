@@ -1,0 +1,43 @@
+# docker base.
+function dc() {
+    if [ -f ".env.docker" ]
+    then
+        set -a && source .env.docker && docker-compose -f docker-compose.yml -f docker-compose.dev.yml $@
+    else
+        docker-compose -f docker-compose.yml -f docker-compose.dev.yml $@
+    fi
+}
+function dsync() {
+	if [ -f ".env.docker" ]
+	then
+		set -a && source .env.docker && docker-sync $@
+	else
+		docker-sync $@
+	fi
+}
+alias dcu='dc up -d'
+alias dck='dc kill'
+alias dcl='dc ps'
+alias dcr='dc restart'
+alias dce='dc exec'
+alias dcp='dce php'
+alias dp='dcp php'
+# docker php base.
+alias dpfix='dcp php-cs-fixer'
+alias cmp='dcp composer'
+alias ci='cmp install'
+alias cu='cmp update'
+alias cr='cmp require'
+# docker php symfony base.
+alias sc='dp bin/console'
+alias sme='sc make:entity'
+alias smc='sc make:controller'
+alias smf='sc make:form'
+alias sdges='sc d:g:entities'
+alias sdsu='sc d:s:u --force'
+alias scc='sc c:c --no-warmup'
+alias resetfixture='sc d:s:d --force && sc d:s:c && sc d:s:u --force && sc d:f:l --env=dev'
+# general.
+alias setmod='sudo chmod -R'
+alias setgroup='sudo chown -R'
+alias rundockerrun='./start.sh'

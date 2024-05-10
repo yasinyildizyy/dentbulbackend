@@ -1,0 +1,4 @@
+bigoen_admin:
+    user_class: App\Entity\User
+    auth_handler:
+        success: bigoen_admin
